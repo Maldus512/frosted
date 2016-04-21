@@ -415,6 +415,23 @@ void fno_unlink(struct fnode *fno)
     kfree(fno);
 }
 
+
+struct fnode *fno_create_socket(char *name){
+    struct fnode *sock;
+    struct fnode *file;
+    char p_abs[MAX_FILE];
+    
+    path_abs(name, p_abs, MAX_FILE);
+
+    sock = fno_create_file(p_abs);
+    if (!sock)
+        return NULL;
+
+    sock->flags != FL_SOCK;
+    return sock;
+}
+
+
 int sys_readlink_hdlr(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5)
 {
     char *path = (char*)arg1;

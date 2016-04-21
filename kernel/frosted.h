@@ -136,6 +136,8 @@ int fno_fullpath(struct fnode *f, char *dst, int len);
 #define FL_EXEC   0x40
 #define FL_LINK   0x80
 
+#define FL_SOCK   0x100
+
 #ifndef FD_CLOEXEC
     #define FD_CLOEXEC	1
 #endif

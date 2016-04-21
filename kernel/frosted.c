@@ -138,7 +138,7 @@ int frosted_init(void)
     kprintf("\r\n\n\nFrosted kernel version 16.01. (GCC version %s, built %s)\r\n", __VERSION__, __TIMESTAMP__);
     */
 
-#ifdef UNIX    
+#ifdef CONFIG_SOCK_UNIX 
     socket_un_init();
 #endif
 
